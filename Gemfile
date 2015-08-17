@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'puma'
 gem 'bower-rails'
+gem 'angular-rails-templates', '~> 0.2.0'
+gem 'slim-rails'
 
 gem "foreman"
 group :production, :staging do
