@@ -4,27 +4,17 @@ section.row
   form
     .form-group.col-md-6.col-md-offset-3
       label.sr-only[for="keywords"] Keywords
-      input.form-control[type="text" autofocus placeholder="Recipe name, e.g. Baked Potato"]
+      input.form-control[ng-model="keywords" name="keywords" type="text" autofocus placeholder="Recipe name, e.g. Baked Potato"]
     .form-group.col-md-6.col-md-offset-3.text-center
-      button.btn.btn-primary.btn-lg Search
+      button.btn.btn-primary.btn-lg[ng-click="search(keywords)"] Search
 hr
-section.row
+section.row[ng-if="recipes"]
   h1.text-center.h2 Results
-  section.well.col-md-6.col-md-offset-3
-    h1.h3.col-md-6.text-right[style="margin-top: 0"]
-      a href="#" Baked Potato w/ Cheese
-    .col-md-6
-      button.btn.btn-info Edit
-      button.btn.btn-danger Delete
-  section.well.col-md-6.col-md-offset-3
-    h1.h3.col-md-6.text-right style=("margin-top: 0")
-      a href="#"  Garlic Mashed Potatoes
-    .col-md-6
-      button.btn.btn-info Edit
-      button.btn.btn-danger Delete
-  section.well.col-md-6.col-md-offset-3
-    h1.h3.col-md-6.text-right style=("margin-top: 0")
-      a href="#"  Potatos Au Gratin
-    .col-md-6
-      button.btn.btn-info Edit
-      button.btn.btn-danger Delete
+  ul.list-unstyled
+    li[ng-repeat="recipe in recipes"]
+      section.well.col-md-6.col-md-offset-3
+        h1.h3.col-md-6.text-right[style="margin-top: 0"]
+          a[href="#"] {{recipe.name}}
+        .col-md-6
+          button.btn.btn-info> Edit
+          button.btn.btn-danger Delete
