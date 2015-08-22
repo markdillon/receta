@@ -62,4 +62,5 @@ group :development, :test do
   gem "selenium-webdriver"
   gem 'teaspoon', "0.7.9"
   gem 'phantomjs'
+  gem 'rubocop'
 end
