@@ -29,6 +29,7 @@ gem 'angular-rails-templates', '~> 0.2.0'
 gem 'slim-rails'
 
 gem "foreman"
+
 group :production, :staging do
   gem "rails_12factor"
   gem "rails_stdout_logging"
@@ -60,7 +61,7 @@ group :development, :test do
   gem "capybara"
   gem "database_cleaner"
   gem "selenium-webdriver"
-  gem 'teaspoon', "0.7.9"
-  gem 'phantomjs'
   gem 'rubocop'
+  gem 'teaspoon-jasmine'
+  gem 'phantomjs'
 end
